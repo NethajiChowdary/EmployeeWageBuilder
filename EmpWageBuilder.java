@@ -7,8 +7,11 @@ int full_day =8;
 int wage_per_hour=20;
 int daily_wage;
 int part_time=4;
+int num_of_workingdays=20;
 
 System.out.println("Welcome to Employee Wage Computation");
+for(int day=0;day<num_of_workingdays;day++)
+{
 Random random = new Random();
 int random1 = random.nextInt(3);
 
@@ -26,6 +29,7 @@ System.out.println("Employee wage is " +daily_wage);
 break;
 default:
 System.out.println("Employee is Absent");
+}
 }
 }
 }
