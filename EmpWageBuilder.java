@@ -10,20 +10,22 @@ int part_time=4;
 
 System.out.println("Welcome to Employee Wage Computation");
 Random random = new Random();
-int random1 = random.nextInt(2);
-if(random1 == 1)
+int random1 = random.nextInt(3);
+
+switch(random1)
 {
-System.out.println("Employee is Present");
+case 1:
 daily_wage=full_day*wage_per_hour;
+System.out.println("Employee is Present ");
 System.out.println("Employee wage is " +daily_wage);
-}
-else if(random1 == 2)
-{
-System.out.println("Employee is Part time");
+break;
+case 2:
 daily_wage=part_time*wage_per_hour;
+System.out.println("Employee is Part time ");
 System.out.println("Employee wage is " +daily_wage);
-}
-else
+break;
+default:
 System.out.println("Employee is Absent");
+}
 }
 }
