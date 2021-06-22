@@ -8,28 +8,34 @@ int wage_per_hour=20;
 int daily_wage;
 int part_time=4;
 int num_of_workingdays=20;
-
+int max_hrs_in_month=100;
+int emphrs=0, totalEmphrs=0, totalWorkingdays=0;
 System.out.println("Welcome to Employee Wage Computation");
-for(int day=0;day<num_of_workingdays;day++)
+while(totalEmphrs<=max_hrs_in_month && totalWorkingdays<num_of_workingdays)
+
 {
+totalWorkingdays++;
+
 Random random = new Random();
 int random1 = random.nextInt(3);
 
 switch(random1)
 {
 case 1:
-daily_wage=full_day*wage_per_hour;
-System.out.println("Employee is Present ");
-System.out.println("Employee wage is " +daily_wage);
+emphrs=8;
 break;
+
 case 2:
-daily_wage=part_time*wage_per_hour;
-System.out.println("Employee is Part time ");
-System.out.println("Employee wage is " +daily_wage);
+emphrs=4;
+
 break;
 default:
-System.out.println("Employee is Absent");
+emphrs=0;
 }
+totalEmphrs=emphrs;
+System.out.println("Day#: "+totalWorkingdays +" Emp hr: "+emphrs);
 }
+int totalEmpWage = totalEmphrs * wage_per_hour;
+System.out.println("Total Emp Wage: " + totalEmpWage);
 }
 }
